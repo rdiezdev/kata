@@ -4,7 +4,8 @@
 - Implement hexagonal architecture
 - Do some Integration & Unit test (On the pokeapi microservice)
 - Implement strategy pattern
-- Docker environment & easy to build & run 
+- Docker environment & easy to build & run
+- Lombok & Mapstruct
 
 This kata is composed of two microservices:
 
