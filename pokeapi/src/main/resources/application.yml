@@ -1,0 +1,14 @@
+spring:
+  jpa.hibernate.ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/pokemon
+    username: alea
+    password: alea
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+server:
+  error:
+    whitelabel:
+      enabled: false

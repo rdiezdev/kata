@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  pokeapi:
+    restart: always
+    build:
+      context: ./pokeapi
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      MYSQL_HOST: db
+    depends_on:
+      - db
+      - pokeapi-cooker
+  pokeapi-cooker:
+    restart: always
+    build:
+      context: ./pokeapi-cooker
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_HOST: db
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: pokemon
+      MYSQL_USER: alea
+      MYSQL_PASSWORD: alea
+      MYSQL_ROOT_PASSWORD: alea
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d/:ro

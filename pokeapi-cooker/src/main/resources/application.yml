@@ -1,0 +1,21 @@
+spring:
+  jpa.hibernate.ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/pokemon
+    username: alea
+    password: alea
+
+pokeapi:
+  batchSize: 5 # amount of pokemons per batch
+  delay-between-calls: 500 # miliseconds
+logging:
+  level:
+    kata.ramon.pokeapicooker: debug
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
