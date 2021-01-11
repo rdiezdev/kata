@@ -4,7 +4,8 @@
 - Implement hexagonal architecture
 - Do some Integration & Unit test (On the pokeapi microservice)
 - Implement strategy pattern
-- Docker environment & easy to build & run 
+- Docker environment & easy to build & run
+- Lombok & Mapstruct
 
 This kata is composed of two microservices:
 
@@ -32,7 +33,7 @@ You can specify the ranking size with `ranking-size` query parameter. (default =
 http://localhost:8080/top/pokemons/greatest-base-experience?ranking-size=10
 ```
 
-###Installation
+### Installation
 There is a Makefile ready to be used.
 
 To build and run the application simply type
