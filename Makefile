@@ -11,4 +11,5 @@ test:
 	@(cd ./pokeapi; ./mvnw clean test)
 
 run: build
-	@docker-compose up -d && echo "🚀 Ecosystem ready in few seconds!"
+	@docker-compose up -d && echo "🚀 Wait a minute and the API will be ready!"
+	@echo "Try with -> curl  http://localhost:8080/pokemons/heaviest"

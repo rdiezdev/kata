@@ -30,7 +30,7 @@ class TopHeaviestPokemonControllerTest {
                 "{\"id\":2,\"name\":\"poke2\",\"weight\":100.0}" +
                 "]";
 
-        mockMvc.perform(get("/top/pokemons/heaviest?ranking-size={rankingSize}", rankingSize))
+        mockMvc.perform(get("/pokemons/heaviest?ranking-size={rankingSize}", rankingSize))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expectedResponse));
@@ -41,7 +41,7 @@ class TopHeaviestPokemonControllerTest {
     void getHeaviestPokemons_whenRankingIsInvalid_shouldReturnBadRequest() throws Exception {
         Integer rankingSize = 11;
 
-        mockMvc.perform(get("/top/pokemons/heaviest?ranking-size={rankingSize}", rankingSize))
+        mockMvc.perform(get("/pokemons/heaviest?ranking-size={rankingSize}", rankingSize))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }

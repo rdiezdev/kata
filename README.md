@@ -1,4 +1,4 @@
-## POKEAPI KATA
+# POKEAPI KATA
 
 ### Main features:
 - Implement hexagonal architecture
@@ -19,18 +19,18 @@ This ms will expose all the endpoints
 
 ```
 Highest pokemons
-http://localhost:8080/top/pokemons/highest
+http://localhost:8080/pokemons/highest
 
 Heaviest pokemons
-http://localhost:8080/top/pokemons/heaviest
+http://localhost:8080/pokemons/heaviest
 
 Highest pokemons
-http://localhost:8080/top/pokemons/greatest-base-experience
+http://localhost:8080/pokemons/greatest-base-experience
 ```
 
 You can specify the ranking size with `ranking-size` query parameter. (default = 5, max = 10) 
 ```
-http://localhost:8080/top/pokemons/greatest-base-experience?ranking-size=10
+http://localhost:8080/pokemons/greatest-base-experience?ranking-size=10
 ```
 
 ### Installation

@@ -29,7 +29,7 @@ class TopHighestPokemonControllerTest {
                 "{\"id\":2,\"name\":\"poke2\",\"height\":15.0}" +
                 "]";
 
-        mockMvc.perform(get("/top/pokemons/highest?ranking-size={rankingSize}", rankingSize))
+        mockMvc.perform(get("/pokemons/highest?ranking-size={rankingSize}", rankingSize))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expectedResponse));
@@ -39,7 +39,7 @@ class TopHighestPokemonControllerTest {
     void getHighestPokemons_whenRankingIsInvalid_shouldReturnBadRequest() throws Exception {
         Integer rankingSize = 11;
 
-        mockMvc.perform(get("/top/pokemons/highest?ranking-size={rankingSize}", rankingSize))
+        mockMvc.perform(get("/pokemons/highest?ranking-size={rankingSize}", rankingSize))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
